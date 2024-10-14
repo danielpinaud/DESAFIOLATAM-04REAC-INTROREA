@@ -1,11 +1,10 @@
 import React, {useState} from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import Home from "./components/Home";
-import Register from "./components/Register";
-import Login from "./components/Login";
-import Cart from "./components/Cart";
+import Home from "./pages/Home";
 import Footer from "./components/Footer";
+import Cart from "./pages/Cart";
+import Pizza from "./pages/Pizza";
 
 function App() {
   const [total, setTotal] = useState(0);
@@ -14,10 +13,10 @@ function App() {
     <Router>
       <NavBar total={total}/>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        <Route exact path="/" Component={Home} />
         <Route path="/cart" element={<Cart setTotal={setTotal}/>} />
+        <Route path="/pizza/:id" Component={Pizza} />
+              
       </Routes>
       <Footer />
     </Router>

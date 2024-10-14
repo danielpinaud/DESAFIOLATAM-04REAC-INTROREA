@@ -1,13 +1,27 @@
-import React from "react";
-import Header from "./Header";
-import CardPizza from "./CardPizza";
-import { pizzas } from "../assets/js/pizzas";
-import '../assets/css/main.css'
+import axios from "axios";
+import React, {useState, useEffect} from "react"
+import CardPizza from "../components/CardPizza";
 
-const Home = () =>{
+const Home = ()=>{
+  const [pizzas, setPizzas] = useState([]);
+
+    const fetchPizzas = async ()=> {
+        try {
+            const response = await axios.get('http://localhost:5000/api/pizzas');
+            setPizzas(response.data)
+        }
+        catch{
+
+        }
+
+    }
+    useEffect(() => {
+        fetchPizzas();
+    }, []);
+
     return(
         <main>
-            <Header />
+         
             <div className="container">
                 <div className="row">
                     {pizzas.map((pizza, index) => (
@@ -16,7 +30,7 @@ const Home = () =>{
                                 id={pizza.id}
                                 desc={pizza.desc}
                                 name={pizza.name}
-                                price={pizza.price.toLocaleString()}
+                                price={pizza.price}
                                 ingredients={pizza.ingredients}
                                 img={pizza.img}
                             />

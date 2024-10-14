@@ -1,11 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { pizzaCart } from "../assets/js/pizzas";
+import "../assets/css/navbar.css";
 
 const NavBar = ({ total }) =>{
     
-    const token = Math.random() >= 1;
+    const token = Math.random() >= 0;
     let totalCart = 0;
+
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        alert("Cerrando sesión");
+        navigate("/");
+    }
 
     pizzaCart.forEach(element => {
         totalCart += element.price;
@@ -34,7 +42,7 @@ const NavBar = ({ total }) =>{
                     {token ? (
                         <>
                         <li className="nav-item">
-                            <Link className="nav-link text-light" to="#">
+                            <Link className="nav-link text-light" to="/profile">
                                 <button className="btn btn-outline-light">
                                     <i className="bi bi-unlock"></i>
                                     &nbsp;Profile
@@ -42,12 +50,10 @@ const NavBar = ({ total }) =>{
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-light" to="#">
-                                <button className="btn btn-outline-light">
-                                    <i className="bi bi-lock"></i>
-                                    &nbsp;Logout
-                                </button>
-                            </Link>
+                            <button className="btn btn-outline-light botonLogout" onClick={handleLogout}>
+                                <i className="bi bi-lock"></i>
+                                &nbsp;Logout
+                            </button>
                         </li>
                         </>
                     ) : (
@@ -71,12 +77,12 @@ const NavBar = ({ total }) =>{
                         </>
                     )}
                     <li className="nav-item ms-auto">
-                        <a className="nav-link" href="/cart">
+                        <Link className="nav-link" to="/cart">
                             <button className="btn btn-outline-info">
                                 <i className="bi bi-cart3"></i>
                                 &nbsp;Total: ${total.toLocaleString()}
                             </button>
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </div>
