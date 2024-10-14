@@ -27,7 +27,7 @@ const CardPizza = ({ id, name, price, ingredients, img, desc }) => {
                 <p className="card-text text-center mb-3 precioPizza">Precio: ${price.toLocaleString()}</p>
                 <div className="d-flex w-100">
                     <button className="btn btn-outline-dark" onClick={handleVerMas}>Ver mas&nbsp;<i className="bi bi-info-circle"></i></button>
-                    <button className="btn btn-dark ms-auto">Añadir&nbsp;<i className="bi bi-cart4"></i></button>
+                    <button className="btn btn-dark ms-auto">AñadirRR&nbsp;<i className="bi bi-cart4"></i></button>
                 </div>
             </div>
         </div>

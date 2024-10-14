@@ -53,7 +53,7 @@ const Pizza = () => {
                                 ))}
                             </p>
                             <p className="card-text">{datos.desc}</p>
-                            <button className="btn btn-dark ms-auto my-2">Añadir&nbsp;<i className="bi bi-cart4"></i></button>
+                            <button className="btn btn-dark ms-auto my-2">Añadirrr&nbsp;<i className="bi bi-cart4"></i></button>
                         </div>
                     </div>
                 </div>
