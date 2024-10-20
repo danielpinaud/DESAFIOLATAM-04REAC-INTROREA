@@ -80,7 +80,7 @@ const NavBar = ({ total }) =>{
                         <Link className="nav-link" to="/cart">
                             <button className="btn btn-outline-info">
                                 <i className="bi bi-cart3"></i>
-                                &nbsp;Totalll: ${total.toLocaleString()}
+                                &nbsp;Total: ${total.toLocaleString()}
                             </button>
                         </Link>
                     </li>

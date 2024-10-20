@@ -42,7 +42,7 @@ const Cart = ({ setTotal }) => {
                                 <div className="col-md-5">
                                     <div className="card-body">
                                         <h5 className="card-title">Pizza {pizza.name}</h5>
-                                        <p className="card-text">Precio unitariooo: ${pizza.price.toLocaleString()}</p>
+                                        <p className="card-text">Precio unitario: ${pizza.price.toLocaleString()}</p>
                                         <p className="card-text">Cantidad: {pizza.count}</p>
                                     </div>                                    
                                 </div>
