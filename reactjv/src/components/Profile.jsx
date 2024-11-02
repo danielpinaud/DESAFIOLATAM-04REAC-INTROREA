@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
 import "../assets/css/profile.css";
 
 const Profile = ({ user }) => {
+    const { token, logout } = useContext(UserContext);
     const navigate = useNavigate();
 
-    const handleLogout = () => {
-        alert("Cerrando sesión");
+    const handleLogout = () =>{
+        logout();
         navigate("/");
     }
 
