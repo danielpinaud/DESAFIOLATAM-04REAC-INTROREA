@@ -6,9 +6,7 @@ import "../assets/css/profile.css";
 const Profile = ({ user }) => {
     const { getProfile, logout} = useContext(UserContext);
     const [profile, setProfile] = useState(null);
-
     const navigate = useNavigate();
-
     useEffect(() => {
         const fetchProfile = async () => {
             const userProfile = await getProfile();

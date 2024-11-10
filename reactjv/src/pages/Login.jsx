@@ -16,7 +16,6 @@ const Login = () => {
     const validarInput = () => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         let isValid = true;
-
         setErrorMail(false)
         setErrorMailFormat(false)
         setErrorPass(false)
